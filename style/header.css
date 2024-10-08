@@ -1,5 +1,17 @@
 header{
-  background-color: var(--cor-primaria);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 0rem 2rem;
+
   width: 100vw;
-  height: 2rem;
+  height: 4rem;
+  background-color: var(--cor-primaria);
+}
+
+h1{
+  font-size: 2rem;
 }

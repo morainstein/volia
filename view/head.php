@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../style/style.css">
   <title>Vó lia produtos</title>
 </head>
-<body>
+<body class="bg-light">
   <header>
     <h1>Vó Lia - Produtos artesanais</h1>
     <span>Sair</span>
