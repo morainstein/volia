@@ -1,6 +1,6 @@
 <?php 
 
-namespace Volia\Entity\Cliente;
+namespace Volia\Entity;
 
 class Cliente{
 

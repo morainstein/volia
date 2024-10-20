@@ -2,12 +2,12 @@
 // session_start();
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . "functions.php";
-requireRootPath("/config/config.php");
+require_once rootPath("config/config.php");
 
-requireRootPath("/src/Entity/Cliente.php");
-requireRootPath("/src/Entity/Produto.php");
-requireRootPath("/src/Repository/Cliente.php");
-requireRootPath("/src/Repository/Produto.php");
+require_once rootPath("src/Entity/Cliente.php");
+require_once rootPath("src/Repository/Cliente.php");
+// requireRootPath("/src/Entity/Produto.php");
+// requireRootPath("/src/Repository/Produto.php");
 
 try{
   $PDO = new PDO(DSN,USER,PASSWORD);

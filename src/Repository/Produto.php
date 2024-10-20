@@ -1,6 +1,6 @@
 <?php 
 
-namespace Volia\Repository\Produto;
+namespace Volia\Repository;
 
 class Produto
 {
@@ -11,10 +11,16 @@ class Produto
     $this->conn = $conn;
   }
 
-  public function all()
+  public function SelectAll()
   {
     $stmt = $this->conn->query("SELECT * FROM produtos");
     $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $resultado;
+  }
+
+  public function SelectById($id){
+    $stmt = $this->conn->query("SELECT * FROM produtos WHERE id = $id");
+    $resultado = $stmt->fetch(\PDO::FETCH_ASSOC);
     return $resultado;
   }
 

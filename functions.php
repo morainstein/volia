@@ -6,16 +6,16 @@ function rootPath(string $path): string {
   return PATH_ROOT . str_replace("/",DIRECTORY_SEPARATOR,$path);
 }
 
-function requireRootPath(string $path, bool $returnString = false){
-  switch($returnString){
-    case false:
-      require_once rootPath($path);
-    break;
-    case true:
-      return rootPath($path);
-    break;
-  }
-}
+// function requireRootPath(string $path, bool $returnString = false){
+//   switch($returnString){
+//     case false:
+//       require_once rootPath($path);
+//     break;
+//     case true:
+//       return rootPath($path);
+//     break;
+//   }
+// }
 
 function echoPre($vardump){
   echo "<pre>";

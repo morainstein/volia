@@ -1,6 +1,6 @@
 <?php
 
-namespace Volia\Repository\Cliente;
+namespace Volia\Repository;
 
 use Exception;
 
