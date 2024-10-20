@@ -1,6 +1,7 @@
 <?php 
 
 namespace Volia\Entity;
+use Volia\Repository\Cliente as RepoCliente;
 
 class Cliente{
 
@@ -9,9 +10,9 @@ class Cliente{
   public readonly string $email;  
   public readonly string $senha;  
   public readonly string $data_nasc;
-  private Volia\Repository\Cliente $RepoCliente;
+  private RepoCliente $RepoCliente;
   
-  public function __construct(Volia\Repository\Cliente $RepoCliente){
+  public function __construct(RepoCliente $RepoCliente){
     $this->RepoCliente = $RepoCliente;
   }
 

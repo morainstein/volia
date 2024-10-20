@@ -5,7 +5,7 @@ use Volia\Entity\Cliente\Cliente;
 
 // $cliente = new Cliente();
 
-requireRootPath("/view/login.php");
+require_once RootPath("/view/login.php");
 
 $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 $password = filter_input(INPUT_POST, "password", FILTER_DEFAULT);

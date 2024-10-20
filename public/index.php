@@ -3,11 +3,13 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR .'depend
 require_once rootPath("src/Entity/Produto.php");
 require_once rootPath("src/Repository/Produto.php");
 
-// use Volia\Entity\Cliente;
-// use Volia\Repository\Cliente as RepoCliente;
+use Volia\Repository\Cliente as RepoCliente;
+use Volia\Entity\Cliente;
 use Volia\Repository\Produto as RepoProduto;
 use Volia\Entity\Produto;
 
+$RepoCliente = new RepoCliente($PDO);
+$cliente = new Cliente($RepoCliente);
 
 $RepoProduto = new RepoProduto($PDO);
 $Produto = new Produto($RepoProduto);
@@ -20,10 +22,14 @@ $Produto = new Produto($RepoProduto);
 if(str_starts_with($_SERVER['REQUEST_URI'], "/product")){
   include_once rootPath("public/view/product.php");
 }
-elseif(str_starts_with($_SERVER['REQUEST_URI'], "/")){
+else if(str_starts_with($_SERVER['REQUEST_URI'], "/login")){
+
+  
+
+}
+else if(str_starts_with($_SERVER['REQUEST_URI'], "/")){
   include_once rootPath("public/view/dashboard.php");
 }
-
 // include_once rootPath("public/view/product.php");
 
 
