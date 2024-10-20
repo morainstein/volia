@@ -1,12 +1,9 @@
 <?php 
+require_once __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR .'dependencies.php';
 
-require_once __DIR__ . DIRECTORY_SEPARATOR ."..". DIRECTORY_SEPARATOR ."config". DIRECTORY_SEPARATOR ."dependencies.php";
 
-
-$stmt = $PDO->query("SELECT * FROM produtos");
-
-$resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-echoPre($resultado);
+// include rootPath("view/head.php");
+include rootPath("public/view/dashboard.php");
+// include rootPath("view/footer.php");
 
 ?>
