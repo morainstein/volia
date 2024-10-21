@@ -1,3 +1,17 @@
+<?php
+
+$log_option = "<button onclick='LoginOn()'>Logar</button>";
+
+if(!empty($_SESSION)){
+  $nome = $_SESSION['nome'];
+  $log_option = "<h5>Bem vindo, $nome</h5> <a id='sair' href='/logout'>Sair</a>";
+
+  if($_SESSION['acesso'] == 'adm'){
+    $log_option .= "<a href='/admin'>Admin</a>";
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +25,9 @@
 <body class="bg-light">
   <header>
     <h1>Vó Lia - Produtos artesanais</h1>
-    <button onclick="LoginOn()">Logar</button>
+    <div id="log_option">
+      <?= $log_option ?>
+    </div>
   </header>
 
   <section id="login">

@@ -15,3 +15,9 @@ header{
 h1{
   font-size: 2rem;
 }
+
+#log_option{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
