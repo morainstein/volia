@@ -1,6 +1,5 @@
-<?php include_once "head.php";
+<?php 
 $p = $Produto->ProdutoById($_GET['id']);
-
 ?>
 
   <section class="container mt-5 d-flex-column justify-content-center">
@@ -21,5 +20,3 @@ $p = $Produto->ProdutoById($_GET['id']);
 
   </div>
   </section>
-
-<?php include_once "footer.php";?>

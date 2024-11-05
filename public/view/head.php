@@ -7,7 +7,7 @@ if(!empty($_SESSION)){
   $log_option = "<h5>Bem vindo, $nome</h5> <a id='sair' href='/logout'>Sair</a>";
 
   if($_SESSION['acesso'] == 'adm'){
-    $log_option .= "<a href='/admin'>Admin</a>";
+    $log_option .= "<a href='/gerencia'>Gerenciar produtos</a>";
   }
 }
 
@@ -24,7 +24,7 @@ if(!empty($_SESSION)){
 </head>
 <body class="bg-light">
   <header>
-    <h1>Vó Lia - Produtos artesanais</h1>
+    <h1><a href="/">Vó Lia - Produtos artesanais</a></h1>
     <div id="log_option">
       <?= $log_option ?>
     </div>
@@ -39,3 +39,4 @@ if(!empty($_SESSION)){
     </form>
 
   </section>
+  <main>

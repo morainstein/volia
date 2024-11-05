@@ -1,8 +1,6 @@
-<?php include_once "head.php";
+<?php
 $produtos = $Produto->listAll();
-
 ?>
-<main>
 
 <section class="container-fluid mt-2 d-flex-column">
     <h2 class="text-center container p-3">Produtos: </h2>
@@ -23,7 +21,3 @@ $produtos = $Produto->listAll();
   </div>
 
 </section>
-
-</main>
-
-<?php  include_once "footer.php";?>

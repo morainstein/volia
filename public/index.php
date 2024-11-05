@@ -26,7 +26,12 @@ $Adm = new Adm($PDO);
 // $_SERVER["PATH_INFO"]
 
 if(str_starts_with($_SERVER['REQUEST_URI'], "/product")){
+  include_once rootPath("public/view/head.php");
+  if(@$_SESSION['acesso'] === "adm"){
+    include_once rootPath("public/view/edita.php");
+  }
   include_once rootPath("public/view/product.php");
+  include_once rootPath("public/view/footer.php");
 }
 else if(str_starts_with($_SERVER['REQUEST_URI'], "/admin")){  
   include_once rootPath("public/view/loginADM.php");
@@ -36,10 +41,11 @@ else if(str_starts_with($_SERVER['REQUEST_URI'], "/logout")){
   header("Location: /");  
 }
 else if(str_starts_with($_SERVER['REQUEST_URI'], "/")){
+  include_once rootPath("public/view/head.php");
+  if(@$_SESSION['acesso'] === "adm"){
+    include_once rootPath("public/view/cadastra.php");
+  }
   include_once rootPath("public/view/dashboard.php");
+  include_once rootPath("public/view/footer.php");
 }
-// include_once rootPath("public/view/product.php");
-
-
-
 ?>
