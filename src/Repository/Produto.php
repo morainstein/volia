@@ -18,13 +18,13 @@ class Produto
     return $resultado;
   }
 
-  public function selectById($id){
+  public function selectById(int $id){
     $stmt = $this->conn->query("SELECT * FROM produtos WHERE id = $id");
     $resultado = $stmt->fetch(\PDO::FETCH_ASSOC);
     return $resultado;
   }
 
-  public function insert($nome, $volume, $valor, $descricao, $img_nome){
+  public function insert(string $nome, int $volume, float $valor, string $descricao, string $img_nome){
     $stmt = $this->conn->prepare("INSERT INTO produtos (nome, volume, valor, descricao, img) VALUES (:nome, :volume, :valor, :descricao, :img_nome)");
     $stmt->bindValue(':nome',$nome);
     $stmt->bindValue(':volume',$volume);
@@ -55,7 +55,11 @@ class Produto
     }
     $stmt->bindValue(':id',$id);
     return $stmt->execute();
-
   }
 
+  public function delete(int $id){
+    $stmt = $this->conn->prepare("DELETE FROM produtos WHERE id = :id");
+    $stmt->bindValue(':id',$id);
+    return $stmt->execute();
+  }
 }

@@ -1,8 +1,7 @@
 <?php 
+$Produto->deleteProduct();
 $Produto->editProduct();
 $p = $Produto->produtoById($_GET['id']);
-
-
 ?>
 
 <form class="container-fluid mt-2 d-flex-column" action="" method="post" enctype="multipart/form-data">
@@ -21,7 +20,7 @@ $p = $Produto->produtoById($_GET['id']);
       value="<?=$p['volume']?>">
   </label>
   <label> Valor do produto:
-    <input type="number"
+    <input type="text"
       name="valor"
       required
       placeholder="<?=$p['valor']?>"
@@ -40,3 +39,7 @@ $p = $Produto->produtoById($_GET['id']);
   <input type="submit" value="Editar">
 </form>
 
+<form action="" method="post">
+  <input type="hidden" name="del" value="<?=$p['id']?>">
+  <input type="submit" value="Apagar">
+</form>

@@ -33,6 +33,9 @@ if(str_starts_with($_SERVER['REQUEST_URI'], "/product")){
   include_once rootPath("public/view/product.php");
   include_once rootPath("public/view/footer.php");
 }
+// else if(str_starts_with($_SERVER['REQUEST_URI'], "/apagar")){  
+//   include_once rootPath("public/view/apagar.php");
+// }
 else if(str_starts_with($_SERVER['REQUEST_URI'], "/admin")){  
   include_once rootPath("public/view/loginADM.php");
 }

@@ -17,7 +17,7 @@ $Produto->registerProduct();
       placeholder="Quantidade em ml">
   </label>
   <label> Valor do produto:
-    <input type="number"
+    <input type="text"
       name="valor"
       required
       placeholder="Valor do produto">

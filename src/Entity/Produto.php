@@ -68,11 +68,11 @@ class Produto{
     if($verificaSePostTaCompleto){
       
       $nome = filter_input(INPUT_POST, "nome", FILTER_DEFAULT);
-      $volume = filter_input(INPUT_POST, "volume", FILTER_DEFAULT);
+      $volume = filter_input(INPUT_POST, "volume", FILTER_VALIDATE_INT);
       $valor = filter_input(INPUT_POST, "valor", FILTER_DEFAULT);
       $descricao = filter_input(INPUT_POST, "descricao", FILTER_DEFAULT);
-      $img_nome = $_FILES['img']['name'] ? $_FILES['img']['name'] : null;
-      $caminho_temporario = $_FILES['img']['tmp_name'];
+      @$img_nome = $_FILES['img']['name'] ? $_FILES['img']['name'] : null;
+      @$caminho_temporario = $_FILES['img']['tmp_name'];
       
       $destino = rootPath("public/imgs/$img_nome");
       
@@ -93,4 +93,18 @@ class Produto{
     }
   }
 
+  function deleteProduct(){
+
+    if(isset($_POST['del'])){
+      
+      $id = filter_input(INPUT_POST, "del", FILTER_VALIDATE_INT);
+
+      $query = $this->RepoProduto->delete($id);
+      if($query){
+        header("Location: /dashboard");
+      }else{
+        echo "Erro ao deletar";
+      }
+    }
+  }
 }
