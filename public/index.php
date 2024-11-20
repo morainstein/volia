@@ -20,11 +20,6 @@ $Produto = new Produto($RepoProduto);
 
 $Adm = new Adm($PDO);
 
-// echoPre($_SERVER);
-// $_SERVER["REQUEST_METHOD"]
-// $_SERVER["REQUEST_URI"]
-// $_SERVER["PATH_INFO"]
-
 if(str_starts_with($_SERVER['REQUEST_URI'], "/product")){
   include_once rootPath("public/view/head.php");
   if(@$_SESSION['acesso'] === "adm"){
@@ -33,9 +28,6 @@ if(str_starts_with($_SERVER['REQUEST_URI'], "/product")){
   include_once rootPath("public/view/product.php");
   include_once rootPath("public/view/footer.php");
 }
-// else if(str_starts_with($_SERVER['REQUEST_URI'], "/apagar")){  
-//   include_once rootPath("public/view/apagar.php");
-// }
 else if(str_starts_with($_SERVER['REQUEST_URI'], "/admin")){  
   include_once rootPath("public/view/loginADM.php");
 }
